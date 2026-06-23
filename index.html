@@ -321,7 +321,7 @@
             }
 
             // ==========================================
-            // II. XỬ LÝ DỮ LIỆU LƯỢT 2 (VÒNG KNOCKOUT)
+            // II. XỬ LÝ DỮ LIỆU LƯỢT 2 (VÒNG KNOCKOUT - ĐÃ TỐI ƯU)
             // ==========================================
             if (r2Rows && r2Rows.length >= 3) {
                 const r2Headers = r2Rows[0];
@@ -345,7 +345,8 @@
                     const star1MatchName = cleanString(currentRow[7]);
                     const star2MatchName = cleanString(currentRow[8]);
 
-                    let totalScore = 0, correctMatches = 0, prevScore = 0, prevMatches = 0;
+                    let totalScore = 0, correctMatches = 0;
+                    let prevScore = 0, prevMatches = 0;
 
                     for (let colIdx = 9; colIdx < r2Headers.length; colIdx++) {
                         const columnNameLower = cleanString(r2Headers[colIdx]);
@@ -358,7 +359,7 @@
                                        (star2MatchName && columnNameLower.includes(star2MatchName));
                         const isX2 = columnNameLower.includes('[trận x2 điểm]');
 
-                        // 1. Đối chiếu kết quả MỚI (Dòng 3)
+                        // 1. Đối chiếu kết quả hiện tại (Dòng 3)
                         let correctValue = r2OfficialResults[colIdx]?.toString().trim() || '---';
                         if (correctValue !== '' && correctValue !== '---') {
                             if (cleanString(userValue) === cleanString(correctValue)) {
@@ -369,7 +370,7 @@
                             }
                         }
 
-                        // 2. Đối chiếu kết quả CŨ (Dòng 2)
+                        // 2. Đối chiếu kết quả trước cập nhật (Dòng 2) độc lập hoàn toàn
                         let prevCorrectValue = r2PreviousResults[colIdx]?.toString().trim() || '---';
                         if (prevCorrectValue !== '' && prevCorrectValue !== '---') {
                             if (cleanString(userValue) === cleanString(prevCorrectValue)) {
@@ -441,7 +442,7 @@
             }
         });
 
-        // Chỉ hiển thị banner biến động khi dòng 2 thực tế có dữ liệu (có người có điểm cũ > 0)
+        // Chỉ hiển thị banner biến động nếu dòng lịch sử (dòng cũ) thực sự có dữ liệu điểm
         const hasPrevData = activePlayers.some(p => p.prevScore > 0 || p.prevMatches > 0);
 
         if (hasPrevData && ((maxLeapPlayer && maxLeapValue > 0) || (maxFallPlayer && maxFallValue > 0))) {
