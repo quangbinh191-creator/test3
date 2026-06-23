@@ -30,7 +30,6 @@
         }
         .glow-gold-brilliant { animation: brilliantGlow 2s infinite ease-in-out; }
 
-        /* Hiệu ứng tia chớp bứt tốc Anime */
         @keyframes speedLines {
             0% { background-position: 0% 0%; opacity: 0.3; }
             50% { opacity: 0.6; }
@@ -43,7 +42,6 @@
             animation: speedLines 0.5s infinite linear;
         }
 
-        /* Hiệu ứng sương mù băng giá rơi chậm cho tụt hạng */
         @keyframes frostMist {
             0% { background-position: 0% 100%; opacity: 0.2; }
             50% { opacity: 0.4; }
@@ -96,7 +94,7 @@
             </p>
         </header>
 
-        <!-- HỆ THỐNG TAB CHUYỂN ĐỔI LUYỆN ĐUA -->
+        <!-- HỆ THỐNG TAB CHUYỂN ĐỔI -->
         <div class="flex justify-center gap-3 mb-8">
             <button id="tab1Btn" onclick="switchTab(1)" class="px-5 py-2.5 rounded-xl font-oswald uppercase tracking-wider font-bold text-sm transition-all duration-300 bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-slate-200">
                 <i class="fa-solid fa-trophy mr-1.5"></i>Vòng Bảng
@@ -106,7 +104,7 @@
             </button>
         </div>
 
-        <!-- ================= KHỐI EVENT BIẾN ĐỘNG MẠNH NHẤT TUẦN (GRID 1:2) ================= -->
+        <!-- KHỐI EVENT BIẾN ĐỘNG -->
         <section id="specialEventsContainer" class="hidden grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 transform scale-95 opacity-0 transition-all duration-700">
             
             <!-- Ô 1: Người Bứt Tốc Nhất -->
@@ -156,8 +154,8 @@
             </div>
 
         </section>
-        <!-- ============================================================================== -->
 
+        <!-- Khối Tìm Kiếm -->
         <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center mb-8 bg-slate-900/80 backdrop-blur-md p-4 rounded-xl border border-slate-700 shadow-xl">
             <div class="sm:col-span-12 relative">
                 <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
@@ -191,15 +189,6 @@
                     </p>
                     
                     <div id="scheduleContainer" class="text-xs sm:text-sm text-slate-300 font-medium space-y-1.5 bg-slate-950/40 p-3 rounded-lg border border-slate-800 text-left">
-                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Trưa ngày 25 - 28/6:</b> Dự đoán các trận ngày 29/6</p>
-                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 29/6 (đến 22:00):</b> Dự đoán các trận ngày 30/6 - 04/7</p>
-                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 02/7 - 04/7 (Chốt 15:00):</b> Dự đoán các trận ngày 05/7 - 06/7</p>
-                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 06/7:</b> Dự đoán các trận ngày 07/7 - 08/7</p>
-                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 08/7 - 09/7:</b> Dự đoán các trận ngày 10/7 - 11/7</p>
-                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 09/7 - 10/7:</b> Dự đoán trận ngày 12/7</p>
-                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 12/7 - 14/7:</b> Dự đoán trận ngày 15/7</p>
-                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 15/7:</b> Dự đoán trận ngày 16/7</p>
-                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 16/7 - 18/7:</b> Dự đoán các trận ngày 19/7 - 20/7</p>
                     </div>
                     
                     <div class="pt-2 text-center">
@@ -253,7 +242,7 @@
             ]);
 
             // ==========================================
-            // I. XỬ LÝ DỮ LIỆU LƯỢT 1
+            // I. XỬ LÝ VÒNG BẢNG (LƯỢT 1)
             // ==========================================
             if (r1UserRows && r1UserRows.length >= 2 && r1ResultRows && r1ResultRows.length >= 2) {
                 const r1UserHeaders = r1UserRows[0];
@@ -321,7 +310,7 @@
             }
 
             // ==========================================
-            // II. XỬ LÝ DỮ LIỆU LƯỢT 2 (VÒNG KNOCKOUT - ĐÃ TỐI ƯU)
+            // II. XỬ LÝ VÒNG KNOCKOUT (LƯỢT 2)
             // ==========================================
             if (r2Rows && r2Rows.length >= 3) {
                 const r2Headers = r2Rows[0];
@@ -345,8 +334,7 @@
                     const star1MatchName = cleanString(currentRow[7]);
                     const star2MatchName = cleanString(currentRow[8]);
 
-                    let totalScore = 0, correctMatches = 0;
-                    let prevScore = 0, prevMatches = 0;
+                    let totalScore = 0, correctMatches = 0, prevScore = 0, prevMatches = 0;
 
                     for (let colIdx = 9; colIdx < r2Headers.length; colIdx++) {
                         const columnNameLower = cleanString(r2Headers[colIdx]);
@@ -359,7 +347,7 @@
                                        (star2MatchName && columnNameLower.includes(star2MatchName));
                         const isX2 = columnNameLower.includes('[trận x2 điểm]');
 
-                        // 1. Đối chiếu kết quả hiện tại (Dòng 3)
+                        // 1. Đối chiếu kết quả MỚI (Dòng 3)
                         let correctValue = r2OfficialResults[colIdx]?.toString().trim() || '---';
                         if (correctValue !== '' && correctValue !== '---') {
                             if (cleanString(userValue) === cleanString(correctValue)) {
@@ -370,7 +358,7 @@
                             }
                         }
 
-                        // 2. Đối chiếu kết quả trước cập nhật (Dòng 2) độc lập hoàn toàn
+                        // 2. Đối chiếu kết quả CŨ (Dòng 2)
                         let prevCorrectValue = r2PreviousResults[colIdx]?.toString().trim() || '---';
                         if (prevCorrectValue !== '' && prevCorrectValue !== '---') {
                             if (cleanString(userValue) === cleanString(prevCorrectValue)) {
@@ -403,28 +391,24 @@
     }
 
     function buildRankData(playersArray) {
-        // 1. Sắp xếp hạng cũ
+        // 1. Tìm Rank Cũ (Dựa độc lập trên dữ liệu cũ)
         let prevSorted = [...playersArray].sort((a, b) => {
             if (b.prevScore !== a.prevScore) return b.prevScore - a.prevScore;
             if (b.prevMatches !== a.prevMatches) return b.prevMatches - a.prevMatches;
             return a.id - b.id;
         });
-        prevSorted.forEach((p, idx) => { p.prevRank = idx + 1; });
-        playersArray.forEach(p => {
-            const match = prevSorted.find(o => o.name === p.name);
-            p.prevRank = match ? match.prevRank : null;
-        });
-
-        // 2. Sắp xếp hạng mới
+        
+        // 2. Tìm Rank Mới (Dựa độc lập trên dữ liệu mới)
         let nextSorted = [...playersArray].sort((a, b) => {
             if (b.score !== a.score) return b.score - a.score;
             if (b.matches !== a.matches) return b.matches - a.matches;
             return a.id - b.id;
         });
-        nextSorted.forEach((p, idx) => { p.actualRank = idx + 1; });
+
+        // Ánh xạ thứ hạng ngược lại vào mảng chính xác để không bị ghi đè chéo
         playersArray.forEach(p => {
-            const match = nextSorted.find(o => o.name === p.name);
-            p.actualRank = match ? match.actualRank : null;
+            p.prevRank = prevSorted.findIndex(o => o.name === p.name) + 1;
+            p.actualRank = nextSorted.findIndex(o => o.name === p.name) + 1;
         });
     }
 
@@ -442,7 +426,6 @@
             }
         });
 
-        // Chỉ hiển thị banner biến động nếu dòng lịch sử (dòng cũ) thực sự có dữ liệu điểm
         const hasPrevData = activePlayers.some(p => p.prevScore > 0 || p.prevMatches > 0);
 
         if (hasPrevData && ((maxLeapPlayer && maxLeapValue > 0) || (maxFallPlayer && maxFallValue > 0))) {
@@ -487,6 +470,7 @@
     }
 
     function initData() {
+        switchTab(2); // Mặc định mở Tab 2
         fetchPlayersData();
         setInterval(fetchPlayersData, 300000); 
     }
@@ -528,7 +512,7 @@
             `;
         }
         
-        triggerIntroAnimation();
+        if (!isInitialLoad) triggerIntroAnimation();
     }
 
     function getRankChangeHTML(change) {
