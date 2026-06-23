@@ -81,20 +81,30 @@
 
     <div class="max-w-5xl mx-auto">
         
-        <header class="text-center mb-8 relative">
+        <header class="text-center mb-6 relative">
             <div class="inline-flex items-center justify-center gap-4 mb-3 group relative">
                 <i class="fa-solid fa-bolt text-3xl sm:text-4xl text-orange-500 animate-bounce"></i>
                 <i class="fa-solid fa-soccer-ball text-4xl sm:text-5xl text-amber-400 text-glow-gold animate-spin" style="animation-duration: 8s;"></i>
                 <i class="fa-solid fa-bolt text-3xl sm:text-4xl text-red-500 animate-bounce"></i>
             </div>
             <h1 class="font-oswald text-3xl sm:text-5xl lg:text-6xl font-bold tracking-wider text-amber-400 text-glow-gold uppercase italic">
-                Bảng Xếp Hạng Cao Thủ Dự Đoán World Cup 2026
+                Bảng Xếp Hạng Cao Thủ Dự Đoán World Cup 2026 carlisle homes
             </h1>
             <p class="text-yellow-400 font-bold uppercase tracking-widest text-xs sm:text-sm mt-3 flex items-center justify-center gap-2 bg-black/40 px-4 py-1 rounded-full inline-block mx-auto">
                 <span class="inline-block w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-                thần rùa tương trợ - Vòng Bảng
+                thần rùa tương trợ - đoán bừa cũng trúng
             </p>
         </header>
+
+        <!-- HỆ THỐNG TAB CHUYỂN ĐỔI LUYỆN ĐUA -->
+        <div class="flex justify-center gap-3 mb-8">
+            <button id="tab1Btn" onclick="switchTab(1)" class="px-5 py-2.5 rounded-xl font-oswald uppercase tracking-wider font-bold text-sm transition-all duration-300 bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-slate-200">
+                <i class="fa-solid fa-trophy mr-1.5"></i>Vòng Bảng
+            </button>
+            <button id="tab2Btn" onclick="switchTab(2)" class="px-5 py-2.5 rounded-xl font-oswald uppercase tracking-wider font-bold text-sm transition-all duration-300 bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20 glow-gold">
+                <i class="fa-solid fa-fire mr-1.5"></i>Vòng Knockout
+            </button>
+        </div>
 
         <!-- ================= KHỐI EVENT BIẾN ĐỘNG MẠNH NHẤT TUẦN (GRID 1:2) ================= -->
         <section id="specialEventsContainer" class="hidden grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 transform scale-95 opacity-0 transition-all duration-700">
@@ -173,20 +183,25 @@
             </div>
         </section>
 
-        <!-- ================= FOOTER ĐẦY ĐỦ NÚT TRA CỨU ================= -->
         <footer class="text-center space-y-6 relative z-10">
             <div class="inline-block bg-gradient-to-r from-red-600 to-amber-500 p-[2px] rounded-xl shadow-lg glow-fire animate-pulse w-full max-w-3xl mx-auto">
                 <div class="bg-[#070b19] px-6 py-4 rounded-xl text-left sm:text-center space-y-3">
                     <p class="font-oswald text-sm sm:text-base tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-amber-400 to-red-500 font-bold uppercase italic leading-relaxed">
                         ⚡ ĐƯỜNG ĐUA CÒN DÀI - VÀO KÈO NGAY ĐỂ LẬT ĐỔ NGÔI VƯƠNG! ⚡
                     </p>
-                    <div class="text-xs sm:text-sm text-slate-300 font-medium space-y-1 bg-slate-950/40 p-3 rounded-lg border border-slate-800">
-                        <p><b class="text-red-400">Lượt 1:</b> Các trận từ 12 - 18/6 | Thời gian bình chọn: từ 05/6 đến 10/6 (Chốt deadline: 15:00)</p>
-                        <p><b class="text-amber-400">Lượt 2:</b> Các trận từ 19 - 24/6 | Thời gian bình chọn: từ 17 - 18/6 (Chốt deadline: 15:00)</p>
-                        <p><b class="text-emerald-400">Lượt 3:</b> Các trận từ 25 - 28/6 | Thời gian bình chọn: từ 23 - 24/6 (Chốt deadline: 15:00)</p>
+                    
+                    <div id="scheduleContainer" class="text-xs sm:text-sm text-slate-300 font-medium space-y-1.5 bg-slate-950/40 p-3 rounded-lg border border-slate-800 text-left">
+                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Trưa ngày 25 - 28/6:</b> Dự đoán các trận ngày 29/6</p>
+                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 29/6 (đến 22:00):</b> Dự đoán các trận ngày 30/6 - 04/7</p>
+                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 02/7 - 04/7 (Chốt 15:00):</b> Dự đoán các trận ngày 05/7 - 06/7</p>
+                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 06/7:</b> Dự đoán các trận ngày 07/7 - 08/7</p>
+                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 08/7 - 09/7:</b> Dự đoán các trận ngày 10/7 - 11/7</p>
+                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 09/7 - 10/7:</b> Dự đoán trận ngày 12/7</p>
+                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 12/7 - 14/7:</b> Dự đoán trận ngày 15/7</p>
+                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 15/7:</b> Dự đoán trận ngày 16/7</p>
+                        <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 16/7 - 18/7:</b> Dự đoán các trận ngày 19/7 - 20/7</p>
                     </div>
                     
-                    <!-- Dòng nút tra cứu đã được khôi phục nguyên vẹn tại đây -->
                     <div class="pt-2 text-center">
                         <a href="https://quangbinh191-creator.github.io/tracuuwc2026/" 
                            target="_blank" 
@@ -202,14 +217,21 @@
     </div>
 
 <script>
-    let players = [];
+    let playersR1 = [];
+    let playersR2 = [];
+    let currentTab = 2; 
     let currentSearchKeyword = "";
     let isInitialLoad = true; 
 
-    const URL_USER_PREDICTIONS = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQOu74BZum8hv_WCNc2lCqbSmV-YXWkwWTrQZ4LmAZgY8Tjj6d9DEA1h6P9E8_4qXWisZy9-atqMeUP/pub?gid=267813523&single=true&output=csv';
-    const URL_MATCH_RESULTS = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQOu74BZum8hv_WCNc2lCqbSmV-YXWkwWTrQZ4LmAZgY8Tjj6d9DEA1h6P9E8_4qXWisZy9-atqMeUP/pub?gid=652215163&single=true&output=csv';
+    const URL_R1_USER_PREDICTIONS = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQOu74BZum8hv_WCNc2lCqbSmV-YXWkwWTrQZ4LmAZgY8Tjj6d9DEA1h6P9E8_4qXWisZy9-atqMeUP/pub?gid=267813523&single=true&output=csv';
+    const URL_R1_MATCH_RESULTS = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQOu74BZum8hv_WCNc2lCqbSmV-YXWkwWTrQZ4LmAZgY8Tjj6d9DEA1h6P9E8_4qXWisZy9-atqMeUP/pub?gid=652215163&single=true&output=csv';
+    const URL_R2_DATA = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQOu74BZum8hv_WCNc2lCqbSmV-YXWkwWTrQZ4LmAZgY8Tjj6d9DEA1h6P9E8_4qXWisZy9-atqMeUP/pub?gid=1421278402&single=true&output=csv';
 
     const avatarColors = ['b6e3f4', 'c0aede', 'd1d4f9', 'ffd5dc', 'ffdfbf', 'c2f2d0', 'f4d8b6'];
+
+    function cleanString(str) {
+        return str ? str.toString().trim().toLowerCase().replace(/\s+/g, ' ') : '';
+    }
 
     function parseCsvPromise(url) {
         return new Promise((resolve, reject) => {
@@ -224,171 +246,218 @@
 
     async function fetchPlayersData() {
         try {
-            const [userRows, resultRows] = await Promise.all([
-                parseCsvPromise(URL_USER_PREDICTIONS),
-                parseCsvPromise(URL_MATCH_RESULTS)
+            const [r1UserRows, r1ResultRows, r2Rows] = await Promise.all([
+                parseCsvPromise(URL_R1_USER_PREDICTIONS),
+                parseCsvPromise(URL_R1_MATCH_RESULTS),
+                parseCsvPromise(URL_R2_DATA)
             ]);
 
-            if (userRows.length < 2 || resultRows.length < 2) {
-                throw new Error("Không tìm thấy dữ liệu hợp lệ trên hệ thống Sheet.");
-            }
-
-            const userHeaders = userRows[0];
-            const idxNickname = userHeaders.findIndex(h => h.trim().toLowerCase() === 'biệt danh');
-            
-            const resultHeaders = resultRows[0];
-            const officialResults = resultRows[1] || [];   
-            const previousResults = resultRows[9] || [];   
-            
-            const maxColumns = Math.min(79, userHeaders.length);
-            
-            let totalAvailableMatches = 0;
-            for (let colIdx = 0; colIdx < maxColumns; colIdx++) {
-                const columnName = userHeaders[colIdx]?.trim() || '';
-                const matchResultIdx = resultHeaders.findIndex(h => h.trim().toLowerCase() === columnName.toLowerCase());
-                if (matchResultIdx !== -1 && officialResults[matchResultIdx]) {
-                    const val = officialResults[matchResultIdx].trim();
-                    if (val !== '' && val !== '---') {
-                        totalAvailableMatches++;
-                    }
-                }
-            }
-
-            let hasPrevData = false;
-            for (let k = 0; k < previousResults.length; k++) {
-                const val = previousResults[k]?.trim();
-                if (val && val !== '' && val !== '---') {
-                    hasPrevData = true;
-                    break;
-                }
-            }
-
-            let calculatedPlayers = [];
-
-            for (let i = 1; i < userRows.length; i++) {
-                const currentRow = userRows[i];
-                const nickname = currentRow[idxNickname]?.trim();
-                if (!nickname) continue;
-
-                let totalScore = 0;
-                let correctMatches = 0;
-                let prevScore = 0;
-                let prevMatches = 0;
-
-                for (let colIdx = 0; colIdx < maxColumns; colIdx++) {
-                    const columnName = userHeaders[colIdx]?.trim() || '';
-                    const userValue = currentRow[colIdx]?.trim() || '';
-                    if (!userValue) continue;
-                    
-                    const matchResultIdx = resultHeaders.findIndex(h => h.trim().toLowerCase() === columnName.toLowerCase());
-                    if (matchResultIdx === -1) continue;
-
-                    let correctValue = officialResults[matchResultIdx]?.trim() || '---';
-                    if (correctValue !== '' && correctValue !== '---') {
-                        if (userValue.toLowerCase() === correctValue.toLowerCase()) {
-                            const isX2 = columnName.toLowerCase().includes('[trận x2 điểm]');
-                            totalScore += isX2 ? 2 : 1;
-                            correctMatches += 1;
-                        }
-                    }
-
-                    let prevCorrectValue = previousResults[matchResultIdx]?.trim() || '---';
-                    if (prevCorrectValue !== '' && prevCorrectValue !== '---') {
-                        if (userValue.toLowerCase() === prevCorrectValue.toLowerCase()) {
-                            const isX2 = columnName.toLowerCase().includes('[trận x2 điểm]');
-                            prevScore += isX2 ? 2 : 1;
-                            prevMatches += 1;
-                        }
+            // ==========================================
+            // I. XỬ LÝ DỮ LIỆU LƯỢT 1
+            // ==========================================
+            if (r1UserRows && r1UserRows.length >= 2 && r1ResultRows && r1ResultRows.length >= 2) {
+                const r1UserHeaders = r1UserRows[0];
+                const r1IdxNickname = r1UserHeaders.findIndex(h => cleanString(h) === 'biệt danh');
+                const r1ResultHeaders = r1ResultRows[0];
+                const r1OfficialResults = r1ResultRows[1] || [];
+                const r1PreviousResults = r1ResultRows[9] || [];
+                
+                let r1TotalAvailableMatches = 0;
+                for (let colIdx = 0; colIdx < Math.min(79, r1UserHeaders.length); colIdx++) {
+                    const columnName = r1UserHeaders[colIdx]?.toString() || '';
+                    const matchResultIdx = r1ResultHeaders.findIndex(h => cleanString(h) === cleanString(columnName));
+                    if (matchResultIdx !== -1 && r1OfficialResults[matchResultIdx]) {
+                        const val = r1OfficialResults[matchResultIdx].toString().trim();
+                        if (val !== '' && val !== '---') r1TotalAvailableMatches++;
                     }
                 }
 
-                let winRate = 0;
-                if (totalAvailableMatches > 0) {
-                    winRate = Math.round((correctMatches / totalAvailableMatches) * 100);
-                }
+                let calculatedR1 = [];
+                for (let i = 1; i < r1UserRows.length; i++) {
+                    const currentRow = r1UserRows[i];
+                    if (!currentRow || currentRow.length === 0) continue;
+                    const nickname = currentRow[r1IdxNickname]?.toString().trim();
+                    if (!nickname) continue;
 
-                const bg = avatarColors[i % avatarColors.length];
+                    let totalScore = 0, correctMatches = 0, prevScore = 0, prevMatches = 0;
 
-                calculatedPlayers.push({
-                    id: i, 
-                    name: nickname,
-                    matches: correctMatches,
-                    totalMatches: totalAvailableMatches,
-                    winRate: winRate,
-                    score: totalScore,
-                    prevScore: prevScore,
-                    prevMatches: prevMatches,
-                    seed: nickname,
-                    bg: bg,
-                    prevRank: null,
-                    actualRank: null
-                });
-            }
+                    for (let colIdx = 0; colIdx < Math.min(79, r1UserHeaders.length); colIdx++) {
+                        const columnName = r1UserHeaders[colIdx]?.toString() || '';
+                        const userValue = currentRow[colIdx]?.toString().trim() || '';
+                        if (!userValue) continue;
+                        
+                        const matchResultIdx = r1ResultHeaders.findIndex(h => cleanString(h) === cleanString(columnName));
+                        if (matchResultIdx === -1) continue;
 
-            if (hasPrevData) {
-                let prevSorted = [...calculatedPlayers].sort((a, b) => {
-                    if (b.prevScore !== a.prevScore) return b.prevScore - a.prevScore;
-                    if (b.prevMatches !== a.prevMatches) return b.prevMatches - a.prevMatches;
-                    return a.id - b.id;
-                });
-                prevSorted.forEach((p, idx) => { p.prevRank = idx + 1; });
-                calculatedPlayers.forEach(p => {
-                    const match = prevSorted.find(o => o.name === p.name);
-                    p.prevRank = match ? match.prevRank : null;
-                });
-            }
-
-            let nextSorted = [...calculatedPlayers].sort((a, b) => {
-                if (b.score !== a.score) return b.score - a.score;
-                if (b.matches !== a.matches) return b.matches - a.matches;
-                return a.id - b.id;
-            });
-            nextSorted.forEach((p, idx) => { p.actualRank = idx + 1; });
-            calculatedPlayers.forEach(p => {
-                const match = nextSorted.find(o => o.name === p.name);
-                p.actualRank = match ? match.actualRank : null;
-            });
-
-            players = calculatedPlayers;
-
-            if (isInitialLoad && hasPrevData) {
-                let maxLeapPlayer = null;
-                let maxLeapValue = -1;
-
-                let maxFallPlayer = null;
-                let maxFallValue = -1;
-
-                players.forEach(p => {
-                    if (p.prevRank && p.actualRank) {
-                        let change = p.prevRank - p.actualRank;
-                        if (change > maxLeapValue) {
-                            maxLeapValue = change;
-                            maxLeapPlayer = p;
+                        let correctValue = r1OfficialResults[matchResultIdx]?.toString().trim() || '---';
+                        if (correctValue !== '' && correctValue !== '---') {
+                            if (cleanString(userValue) === cleanString(correctValue)) {
+                                const isX2 = columnName.toLowerCase().includes('[trận x2 điểm]');
+                                totalScore += isX2 ? 2 : 1;
+                                correctMatches += 1;
+                            }
                         }
-                        let fall = p.actualRank - p.prevRank;
-                        if (fall > maxFallValue) {
-                            maxFallValue = fall;
-                            maxFallPlayer = p;
+
+                        let prevCorrectValue = r1PreviousResults[matchResultIdx]?.toString().trim() || '---';
+                        if (prevCorrectValue !== '' && prevCorrectValue !== '---') {
+                            if (cleanString(userValue) === cleanString(prevCorrectValue)) {
+                                const isX2 = columnName.toLowerCase().includes('[trận x2 điểm]');
+                                prevScore += isX2 ? 2 : 1;
+                                prevMatches += 1;
+                            }
                         }
                     }
-                });
 
-                if ((maxLeapPlayer && maxLeapValue > 0) || (maxFallPlayer && maxFallValue > 0)) {
-                    showSpecialEventsBanner(maxLeapPlayer, maxLeapValue, maxFallPlayer, maxFallValue);
+                    let winRate = r1TotalAvailableMatches > 0 ? Math.round((correctMatches / r1TotalAvailableMatches) * 100) : 0;
+                    calculatedR1.push({
+                        id: i, name: nickname, matches: correctMatches, totalMatches: r1TotalAvailableMatches,
+                        winRate: winRate, score: totalScore, prevScore: prevScore, prevMatches: prevMatches,
+                        seed: nickname, bg: avatarColors[i % avatarColors.length], prevRank: null, actualRank: null
+                    });
                 }
 
-                renderLeaderboard(true); 
-                setTimeout(() => {
-                    isInitialLoad = false;
-                    renderLeaderboard(false);
-                }, 800);
-            } else {
-                renderLeaderboard(false);
+                buildRankData(calculatedR1);
+                playersR1 = calculatedR1;
             }
+
+            // ==========================================
+            // II. XỬ LÝ DỮ LIỆU LƯỢT 2 (VÒNG KNOCKOUT)
+            // ==========================================
+            if (r2Rows && r2Rows.length >= 3) {
+                const r2Headers = r2Rows[0];
+                const r2PreviousResults = r2Rows[1] || []; 
+                const r2OfficialResults = r2Rows[2] || []; 
+                const r2IdxNickname = r2Headers.findIndex(h => cleanString(h) === 'biệt danh');
+
+                let r2TotalAvailableMatches = 0;
+                for (let colIdx = 9; colIdx < r2Headers.length; colIdx++) {
+                    const val = r2OfficialResults[colIdx]?.toString().trim();
+                    if (val && val !== '' && val !== '---') r2TotalAvailableMatches++;
+                }
+
+                let calculatedR2 = [];
+                for (let i = 3; i < r2Rows.length; i++) {
+                    const currentRow = r2Rows[i];
+                    if (!currentRow || currentRow.length === 0) continue;
+                    const nickname = currentRow[r2IdxNickname]?.toString().trim();
+                    if (!nickname) continue;
+
+                    const star1MatchName = cleanString(currentRow[7]);
+                    const star2MatchName = cleanString(currentRow[8]);
+
+                    let totalScore = 0, correctMatches = 0, prevScore = 0, prevMatches = 0;
+
+                    for (let colIdx = 9; colIdx < r2Headers.length; colIdx++) {
+                        const columnNameLower = cleanString(r2Headers[colIdx]);
+                        if (!columnNameLower) continue;
+
+                        const userValue = currentRow[colIdx]?.toString().trim() || '';
+                        if (!userValue) continue;
+
+                        const isStar = (star1MatchName && columnNameLower.includes(star1MatchName)) || 
+                                       (star2MatchName && columnNameLower.includes(star2MatchName));
+                        const isX2 = columnNameLower.includes('[trận x2 điểm]');
+
+                        // 1. Đối chiếu kết quả MỚI (Dòng 3)
+                        let correctValue = r2OfficialResults[colIdx]?.toString().trim() || '---';
+                        if (correctValue !== '' && correctValue !== '---') {
+                            if (cleanString(userValue) === cleanString(correctValue)) {
+                                correctMatches += 1;
+                                totalScore += isStar ? 2 : (isX2 ? 2 : 1);
+                            } else {
+                                if (isStar) totalScore -= 1; 
+                            }
+                        }
+
+                        // 2. Đối chiếu kết quả CŨ (Dòng 2)
+                        let prevCorrectValue = r2PreviousResults[colIdx]?.toString().trim() || '---';
+                        if (prevCorrectValue !== '' && prevCorrectValue !== '---') {
+                            if (cleanString(userValue) === cleanString(prevCorrectValue)) {
+                                prevMatches += 1;
+                                prevScore += isStar ? 2 : (isX2 ? 2 : 1);
+                            } else {
+                                if (isStar) prevScore -= 1;
+                            }
+                        }
+                    }
+
+                    let winRate = r2TotalAvailableMatches > 0 ? Math.round((correctMatches / r2TotalAvailableMatches) * 100) : 0;
+                    calculatedR2.push({
+                        id: i, name: nickname, matches: correctMatches, totalMatches: r2TotalAvailableMatches,
+                        winRate: winRate, score: totalScore, prevScore: prevScore, prevMatches: prevMatches,
+                        seed: nickname, bg: avatarColors[i % avatarColors.length], prevRank: null, actualRank: null
+                    });
+                }
+
+                buildRankData(calculatedR2);
+                playersR2 = calculatedR2;
+            }
+
+            triggerIntroAnimation();
 
         } catch (error) {
             console.error("Lỗi khi tải dữ liệu từ Google Sheets:", error);
             document.getElementById('rankingList').innerHTML = `<div class="text-center py-10 text-red-400 italic">Đang gặp lỗi kết nối với Google Sheets công khai. Vui lòng kiểm tra lại cấu hình chia sẻ!</div>`;
+        }
+    }
+
+    function buildRankData(playersArray) {
+        // 1. Sắp xếp hạng cũ
+        let prevSorted = [...playersArray].sort((a, b) => {
+            if (b.prevScore !== a.prevScore) return b.prevScore - a.prevScore;
+            if (b.prevMatches !== a.prevMatches) return b.prevMatches - a.prevMatches;
+            return a.id - b.id;
+        });
+        prevSorted.forEach((p, idx) => { p.prevRank = idx + 1; });
+        playersArray.forEach(p => {
+            const match = prevSorted.find(o => o.name === p.name);
+            p.prevRank = match ? match.prevRank : null;
+        });
+
+        // 2. Sắp xếp hạng mới
+        let nextSorted = [...playersArray].sort((a, b) => {
+            if (b.score !== a.score) return b.score - a.score;
+            if (b.matches !== a.matches) return b.matches - a.matches;
+            return a.id - b.id;
+        });
+        nextSorted.forEach((p, idx) => { p.actualRank = idx + 1; });
+        playersArray.forEach(p => {
+            const match = nextSorted.find(o => o.name === p.name);
+            p.actualRank = match ? match.actualRank : null;
+        });
+    }
+
+    function triggerIntroAnimation() {
+        let activePlayers = currentTab === 1 ? playersR1 : playersR2;
+        let maxLeapPlayer = null, maxLeapValue = -1;
+        let maxFallPlayer = null, maxFallValue = -1;
+
+        activePlayers.forEach(p => {
+            if (p.prevRank && p.actualRank) {
+                let change = p.prevRank - p.actualRank;
+                if (change > maxLeapValue) { maxLeapValue = change; maxLeapPlayer = p; }
+                let fall = p.actualRank - p.prevRank;
+                if (fall > maxFallValue) { maxFallValue = fall; maxFallPlayer = p; }
+            }
+        });
+
+        // Chỉ hiển thị banner biến động khi dòng 2 thực tế có dữ liệu (có người có điểm cũ > 0)
+        const hasPrevData = activePlayers.some(p => p.prevScore > 0 || p.prevMatches > 0);
+
+        if (hasPrevData && ((maxLeapPlayer && maxLeapValue > 0) || (maxFallPlayer && maxFallValue > 0))) {
+            showSpecialEventsBanner(maxLeapPlayer, maxLeapValue, maxFallPlayer, maxFallValue);
+        } else {
+            document.getElementById('specialEventsContainer').classList.add('hidden');
+        }
+
+        if (isInitialLoad) {
+            renderLeaderboard(true); 
+            setTimeout(() => {
+                isInitialLoad = false;
+                renderLeaderboard(false);
+            }, 800);
+        } else {
+            renderLeaderboard(false);
         }
     }
 
@@ -397,11 +466,7 @@
         
         if (leapP && leapV > 0) {
             document.getElementById('leapAvatar').src = getChibiAvatarUrl(leapP.seed, leapP.bg);
-            if(leapP.actualRank === 1) {
-                document.getElementById('leapName').innerHTML = `<i class="fa-solid fa-crown text-amber-400 animate-bounce mr-1"></i>${leapP.name}`;
-            } else {
-                document.getElementById('leapName').innerText = leapP.name;
-            }
+            document.getElementById('leapName').innerHTML = leapP.actualRank === 1 ? `<i class="fa-solid fa-crown text-amber-400 animate-bounce mr-1"></i>${leapP.name}` : leapP.name;
             document.getElementById('leapCount').innerText = `+${leapV} BẬC`;
             document.getElementById('leapSubtext').innerText = `Hạng cũ: ${leapP.prevRank} ➔ Hạng mới: ${leapP.actualRank}`;
         }
@@ -425,6 +490,46 @@
         setInterval(fetchPlayersData, 300000); 
     }
 
+    function switchTab(tabNum) {
+        currentTab = tabNum;
+        const btn1 = document.getElementById('tab1Btn');
+        const btn2 = document.getElementById('tab2Btn');
+        const scheduleContainer = document.getElementById('scheduleContainer');
+        
+        const rankingList = document.getElementById('rankingList');
+        rankingList.innerHTML = '';
+
+        if (tabNum === 1) {
+            btn1.className = "px-5 py-2.5 rounded-xl font-oswald uppercase tracking-wider font-bold text-sm transition-all duration-300 bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20 glow-gold";
+            btn2.className = "px-5 py-2.5 rounded-xl font-oswald uppercase tracking-wider font-bold text-sm transition-all duration-300 bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-slate-200";
+            
+            scheduleContainer.className = "text-xs sm:text-sm text-slate-300 font-medium space-y-1 bg-slate-950/40 p-3 rounded-lg border border-slate-800 text-left sm:text-center";
+            scheduleContainer.innerHTML = `
+                <p><b class="text-red-400">Lượt 1:</b> Các trận từ 12 - 18/6 | Thời gian bình chọn: từ 05/6 đến 10/6 (Chốt deadline: 15:00)</p>
+                <p><b class="text-amber-400">Lượt 2:</b> Các trận từ 19 - 24/6 | Thời gian bình chọn: từ 17 - 18/6 (Chốt deadline: 15:00)</p>
+                <p><b class="text-emerald-400">Lượt 3:</b> Các trận từ 25 - 28/6 | Thời gian bình chọn: từ 23 - 24/6 (Chốt deadline: 15:00)</p>
+            `;
+        } else {
+            btn2.className = "px-5 py-2.5 rounded-xl font-oswald uppercase tracking-wider font-bold text-sm transition-all duration-300 bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20 glow-gold";
+            btn1.className = "px-5 py-2.5 rounded-xl font-oswald uppercase tracking-wider font-bold text-sm transition-all duration-300 bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-slate-200";
+            
+            scheduleContainer.className = "text-xs sm:text-sm text-slate-300 font-medium space-y-1.5 bg-slate-950/40 p-3 rounded-lg border border-slate-800 text-left";
+            scheduleContainer.innerHTML = `
+                <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Trưa ngày 25 - 28/6:</b> Dự đoán các trận ngày 29/6</p>
+                <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 29/6 (đến 22:00):</b> Dự đoán các trận ngày 30/6 - 04/7</p>
+                <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 02/7 - 04/7 (Chốt 15:00):</b> Dự đoán các trận ngày 05/7 - 06/7</p>
+                <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 06/7:</b> Dự đoán các trận ngày 07/7 - 08/7</p>
+                <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 08/7 - 09/7:</b> Dự đoán các trận ngày 10/7 - 11/7</p>
+                <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 09/7 - 10/7:</b> Dự đoán trận ngày 12/7</p>
+                <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 12/7 - 14/7:</b> Dự đoán trận ngày 15/7</p>
+                <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 15/7:</b> Dự đoán trận ngày 16/7</p>
+                <p><i class="fa-regular fa-clock text-amber-400 mr-1.5"></i><b>Ngày 16/7 - 18/7:</b> Dự đoán các trận ngày 19/7 - 20/7</p>
+            `;
+        }
+        
+        triggerIntroAnimation();
+    }
+
     function getRankChangeHTML(change) {
         if (change > 0) {
             return `<span class="text-emerald-400 text-xs font-sans font-bold inline-flex items-center gap-0.5 ml-1 animate-pulse" title="Tăng ${change} bậc"><i class="fa-solid fa-caret-up"></i>${change}</span>`;
@@ -435,7 +540,8 @@
     }
 
     function renderLeaderboard(forceRenderOld = false) {
-        let sortedPlayers = [...players];
+        let activePlayers = currentTab === 1 ? playersR1 : playersR2;
+        let sortedPlayers = [...activePlayers];
         
         if (forceRenderOld) {
             sortedPlayers.sort((a, b) => {
@@ -497,10 +603,7 @@
         }
 
         displayOrder.forEach(player => {
-            let cardStyle = "";
-            let badgeStyle = "";
-            let rankLabel = "";
-            let shimmerLayer = "";
+            let cardStyle = "", badgeStyle = "", rankLabel = "", shimmerLayer = "";
             
             const displayScore = forceRenderOld ? player.prevScore : player.score;
             const displayMatches = forceRenderOld ? player.prevMatches : player.matches;
